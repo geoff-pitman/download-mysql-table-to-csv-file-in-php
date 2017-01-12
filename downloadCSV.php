@@ -4,8 +4,8 @@ header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=data.csv');
 
 // connect to database
-$conn = mysql_connect('localhost', 'gpitm379', 'bigboom');
-mysql_select_db('gpitm379_bookstore');
+$conn = mysql_connect('localhost', <username> , <password>);
+mysql_select_db(<DBname>);
 
 // create file pointer connected to output stream
 $output = fopen('php://output', 'w');
