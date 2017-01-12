@@ -1,5 +1,5 @@
 <?php
-// let client's browser know to expect text/csv file attachment
+// let client know to expect text/csv file attachment
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=data.csv');
 
