@@ -23,7 +23,7 @@ fputcsv($output, $names);
 
 // output table data records
 while ($row = mysql_fetch_assoc($rows))
-    fputcsv($output, $row); // possible to change delimiter/enclosure
+    fputcsv($output, $row); // possible to change delimiter here
 
 // clean up
 mysql_close($conn);
