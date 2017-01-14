@@ -7,9 +7,6 @@ header('Content-Disposition: attachment; filename=data.csv');
 $conn = mysql_connect('localhost', 'username' , 'password');
 mysql_select_db('DBname');
 
-// create file pointer connected to output stream
-$output = fopen('php://output', 'w');
-
 // get table data
 $rows = mysql_query('SELECT * FROM Registration');
 
@@ -18,9 +15,12 @@ $field = mysql_num_fields($rows);
 for ( $i = 0; $i < $field; $i++ ) 
    $names[] = mysql_field_name( $rows, $i );
 
+// create file pointer connected to output stream
+$output = fopen('php://output', 'w');
+
 // output column names
 fputcsv($output, $names);
-     
+
 // output table data
 while ($row = mysql_fetch_assoc($rows))
     fputcsv($output, $row); // possible to change delimiter/enclosure
