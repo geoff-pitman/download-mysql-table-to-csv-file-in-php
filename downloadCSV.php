@@ -18,10 +18,10 @@ for ( $i = 0; $i < $field; $i++ )
 // create file pointer connected to output stream
 $output = fopen('php://output', 'w');
 
-// output column names
+// output column/field names
 fputcsv($output, $names);
 
-// output table data
+// output table data records
 while ($row = mysql_fetch_assoc($rows))
     fputcsv($output, $row); // possible to change delimiter/enclosure
 
