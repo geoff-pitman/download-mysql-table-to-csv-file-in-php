@@ -8,7 +8,7 @@ $conn = mysql_connect('localhost', 'username' , 'password');
 mysql_select_db('DBname');
 
 // get table data
-$rows = mysql_query('SELECT * FROM Registration');
+$rows = mysql_query('SELECT * FROM KitchenTable');
 
 // get column names
 $field = mysql_num_fields($rows);  
